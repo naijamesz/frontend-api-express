@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "backend": "node api/index.js",
-    "dev": "vite && npm run backend",
+    "start": "npm run dev && npm run backend",
+    "dev": "vite && backend",
     "build": "vite build",
     "buildrun": "npm run build && npm run backend",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
