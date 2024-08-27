@@ -24,14 +24,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// const corsOptions = {
-//   origin: ['http://localhost:5173'],
-// };
+const corsOptions = {
+  origin: ['https://frontend-api-express.vercel.app/'],
+};
 //! Middlewares
 app.use(express.json()); // Pass incoming json data
 app.use(apiLimiter);
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+// app.use(cors());
 
 //! Conversion
 app.post('/api/convert', async (req, res) => {
