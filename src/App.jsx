@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useState } from 'react';
 import './CurrencyConverter.css';
 
+const apiPort = process.env.API_PORT;
+
 function App() {
   const [formData, setFormData] = useState({
     from: '',
@@ -25,7 +27,7 @@ function App() {
     e.preventDefault();
     //Http Request
     try {
-      const response = await axios.post('http://localhost:5000/api/convert', formData);
+      const response = await axios.post(`${apiPort}/api/convert`, formData);
       setResult(response?.data);
       setError('');
     } catch (error) {
