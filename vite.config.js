@@ -7,7 +7,7 @@ export default defineConfig({
     react({
       proxy: {
         '/api': {
-          target: 'http://localhost:5000',
+          target: 'https://frontend-api-express.onrender.com',
           changeOrigin: true,
         },
       },
